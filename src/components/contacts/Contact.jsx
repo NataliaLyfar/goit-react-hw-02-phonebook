@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types';
+import {FaUserMinus} from "react-icons/fa";
+import { ListItem, Button } from './Contact.styled';
 
 const Contact = ({ id, name, number, onDelete }) => {
     return (
-        <li key={id} id={id}>
-            <p>{name}: {number}</p>
-            <button
-            onClick={() => onDelete(id)}>Delete</button>
-        </li>
+        <ListItem key={id} id={id}>
+           {name}: {number}
+            <Button
+              onClick={() => onDelete(id)}>
+              <FaUserMinus/>
+            </Button>
+        </ListItem>
     );
 };
 

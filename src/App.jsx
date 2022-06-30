@@ -1,6 +1,7 @@
 import React from 'react';
-import ContactForm from 'components/form/Form';
-import Container from './styleConfig/App.styled';
+import {Container, Header} from './styleConfig/App.styled';
+import Section from 'components/section/Section';
+import ContactForm from 'components/contactForm/Form';
 import ContactList from 'components/contacts/ContactList';
 import Filter from 'components/filter/Filter';
 import { nanoid } from 'nanoid';
@@ -20,7 +21,7 @@ formSubmitHandler = ({ name, number }) => {
   this.setState(({ contacts }) => (
     contacts.find(contact => contact.name === newContact.name) ?
     alert(`${newContact.name} is already in contacts`) :
-    {contacts: [newContact, ...contacts]}
+    {contacts: [newContact, ...contacts].sort()}
   ));
 };
 
@@ -45,16 +46,19 @@ render() {
   const { filter } = this.state;
     return (
       <Container>
-        <h1>Phonebook</h1>
-        <ContactForm onSubmit={this.formSubmitHandler}/>
-        <h2>Contacts</h2>
-        <Filter
-          filter={filter}
-          onInputChange={this.handleChange}/>
-        <ContactList 
-          contacts={this.handleFilter()}
-          onDeleteContact={this.deleteContact}
-        />
+        <Header>Phonebook</Header>
+        <Section>
+          <ContactForm onSubmit={this.formSubmitHandler}/>
+        </Section>
+        <Section title={"Contacts"}>
+          <Filter
+            filter={filter}
+            onInputChange={this.handleChange}/>
+          <ContactList 
+            contacts={this.handleFilter()}
+            onDeleteContact={this.deleteContact}
+          />
+        </Section>
       </Container>
       );
   };
