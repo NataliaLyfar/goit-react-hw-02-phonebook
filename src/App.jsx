@@ -23,7 +23,7 @@ formSubmitHandler = ({ name, number }) => {
   this.setState(({ contacts }) => (
     contacts.find(contact => contact.name === newContact.name) ?
     Notify.info(`${newContact.name} is already in contacts`, 
-    {position: 'center-top', fontSize: '16px', width: '370px', info: {background: 'rgba(3, 7, 27)'}}
+    {position: 'center-top', fontSize: '16px', width: '370px', info: {background: 'rgba(139, 6, 94)'}}
     ) :
     {contacts: [newContact, ...contacts].sort()}
   ));
