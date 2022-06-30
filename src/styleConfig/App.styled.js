@@ -3,6 +3,7 @@ import BackPic from './black-wallpapers-for-smartphone-68-min.jpg';
 
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,4 +23,3 @@ export const Header = styled.h1`
 font-size: ${p => p.theme.fontSizes.xl};
 font-weight: ${p => p.theme.fontWeights.bold};
 `;
- 

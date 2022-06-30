@@ -1,10 +1,12 @@
 import React from 'react';
+import { nanoid } from 'nanoid';
+import { Notify } from 'notiflix';
 import {Container, Header} from './styleConfig/App.styled';
 import Section from 'components/section/Section';
 import ContactForm from 'components/contactForm/Form';
 import ContactList from 'components/contacts/ContactList';
 import Filter from 'components/filter/Filter';
-import { nanoid } from 'nanoid';
+
 
 export class App extends React.Component {
 state = {
@@ -20,7 +22,9 @@ formSubmitHandler = ({ name, number }) => {
   };
   this.setState(({ contacts }) => (
     contacts.find(contact => contact.name === newContact.name) ?
-    alert(`${newContact.name} is already in contacts`) :
+    Notify.info(`${newContact.name} is already in contacts`, 
+    {position: 'center-top', fontSize: '16px', width: '370px', info: {background: 'rgba(3, 7, 27)'}}
+    ) :
     {contacts: [newContact, ...contacts].sort()}
   ));
 };
