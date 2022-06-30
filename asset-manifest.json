@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/goit-react-hw-02-phonebook/static/css/main.a17f30bf.css",
-    "main.js": "/goit-react-hw-02-phonebook/static/js/main.8466c2f9.js",
-    "static/media/jpg": "/goit-react-hw-02-phonebook/static/media/3ef69b6e05160d6c1df9ecae3c5b68c3.1dcdba482de236e3078b.jpg",
+    "main.js": "/goit-react-hw-02-phonebook/static/js/main.b4d461e0.js",
+    "static/media/black-wallpapers-for-smartphone-68-min.jpg": "/goit-react-hw-02-phonebook/static/media/black-wallpapers-for-smartphone-68-min.2e8748c560cb4a0bb406.jpg",
     "index.html": "/goit-react-hw-02-phonebook/index.html",
     "main.a17f30bf.css.map": "/goit-react-hw-02-phonebook/static/css/main.a17f30bf.css.map",
-    "main.8466c2f9.js.map": "/goit-react-hw-02-phonebook/static/js/main.8466c2f9.js.map"
+    "main.b4d461e0.js.map": "/goit-react-hw-02-phonebook/static/js/main.b4d461e0.js.map"
   },
   "entrypoints": [
     "static/css/main.a17f30bf.css",
-    "static/js/main.8466c2f9.js"
+    "static/js/main.b4d461e0.js"
   ]
 }
