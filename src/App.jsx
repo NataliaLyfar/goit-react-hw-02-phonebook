@@ -1,16 +1,22 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
 import { Notify } from 'notiflix';
-import {Container, Header} from './styleConfig/App.styled';
-import Section from 'components/section/Section';
-import ContactForm from 'components/contactForm/Form';
-import ContactList from 'components/contacts/ContactList';
-import Filter from 'components/filter/Filter';
+import { Container } from './components/container';
+import { Header } from 'components/header';
+import { Section } from 'components/section';
+import { ContactForm } from 'components/contactForm';
+import { ContactList } from 'components/contacts';
+import { Filter } from 'components/filter';
 
 
 export class App extends React.Component {
 state = {
-  contacts: [],
+  contacts: [
+    {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
+    {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
+    {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
+    {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
+  ],
   filter: ''
 };
 
@@ -25,19 +31,17 @@ formSubmitHandler = ({ name, number }) => {
     Notify.info(`${newContact.name} is already in contacts`, 
     {position: 'center-top', fontSize: '16px', width: '370px', info: {background: 'rgba(139, 6, 94)'}}
     ) :
-    {contacts: [newContact, ...contacts].sort()}
+    {contacts: [newContact, ...contacts]}
   ));
 };
 
-deleteContact = (contactId) => {
+deleteContact = (contactId) => 
 this.setState(({ contacts }) => ({
   contacts: contacts.filter(contact => contact.id !== contactId)
-}))
-};
+}));
 
-handleChange = e => {
-  this.setState({filter: e.currentTarget.value});
-};
+handleChange = e => this.setState({filter: e.currentTarget.value});
+
 
 handleFilter = () => {
   const { contacts, filter } = this.state;

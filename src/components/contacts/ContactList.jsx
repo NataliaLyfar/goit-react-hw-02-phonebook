@@ -1,8 +1,15 @@
 import PropTypes from 'prop-types';
-import Contact from "./Contact";
-import { List } from './Contact.styled';
+import { Contact } from "./Contact";
+import styled from "styled-components";
 
-const ContactList = ({ contacts, onDeleteContact }) => {
+const List = styled.ul`
+display: flex;
+flex-direction: column;
+justify-content: start;
+align-items: stretch;
+`;
+
+export const ContactList = ({ contacts, onDeleteContact }) => {
     return (
     <List>
     {contacts.map(({id, name, number}) => (
@@ -19,4 +26,3 @@ ContactList.propTypes = {
     contacts: PropTypes.arrayOf(PropTypes.shape).isRequired
 };
 
-export default ContactList;

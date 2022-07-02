@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import BackPic from './black-wallpapers-for-smartphone-68-min.jpg';
-
+import BackPic from 'asset/background.jpg';
 
 export const Container = styled.div`
   position: relative;
@@ -19,7 +18,3 @@ export const Container = styled.div`
   font-family: ${p => p.theme.fonts.body};
   color: ${p => p.theme.colors.primary};
   `;
-export const Header = styled.h1`
-font-size: ${p => p.theme.fontSizes.xl};
-font-weight: ${p => p.theme.fontWeights.bold};
-`;
