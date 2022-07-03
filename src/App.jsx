@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import { Notify } from 'notiflix';
 import { Container } from './components/container';
@@ -9,7 +9,7 @@ import { ContactList } from 'components/contacts';
 import { Filter } from 'components/filter';
 
 
-export class App extends React.Component {
+export class App extends Component {
 state = {
   contacts: [
     {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
@@ -47,20 +47,6 @@ handleFilter = () => {
   const normalizedFilter = filter.toLowerCase();
   return contacts.filter((contact) => 
     contact.name.toLowerCase().includes(normalizedFilter));
-};
-
-componentDidMount() {
-  const savedContacts = JSON.parse(localStorage.getItem('contacts'));
-  if(savedContacts){
-  this.setState({contacts: savedContacts});
-};
-};
-
-componentDidUpdate(prevProps, prevState){
-  const {contacts} = this.state;
-  if(contacts !== prevState.contacts){
-  localStorage.setItem('contacts', JSON.stringify(contacts))
-};
 };
 
 render() {
