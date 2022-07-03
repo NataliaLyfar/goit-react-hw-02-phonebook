@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from "react";
+import {Component} from "react";
 import { nanoid } from 'nanoid';
 import {FaUserPlus, FaPhoneAlt} from "react-icons/fa";
 import styled from "styled-components";
@@ -59,7 +59,7 @@ box-shadow: 0 2px 8px rgba(210, 105, 30, 0.7), inset 0 1px rgba(255, 255, 255, 0
 };
 `;
 
-export class ContactForm extends React.Component {
+export class ContactForm extends Component {
     state = {
         name: '',
         number: ''

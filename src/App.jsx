@@ -42,12 +42,25 @@ this.setState(({ contacts }) => ({
 
 handleChange = e => this.setState({filter: e.currentTarget.value});
 
-
 handleFilter = () => {
   const { contacts, filter } = this.state;
   const normalizedFilter = filter.toLowerCase();
   return contacts.filter((contact) => 
     contact.name.toLowerCase().includes(normalizedFilter));
+};
+
+componentDidMount() {
+  const savedContacts = JSON.parse(localStorage.getItem('contacts'));
+  if(savedContacts){
+  this.setState({contacts: savedContacts});
+};
+};
+
+componentDidUpdate(prevProps, prevState){
+  const {contacts} = this.state;
+  if(contacts !== prevState.contacts){
+  localStorage.setItem('contacts', JSON.stringify(contacts))
+};
 };
 
 render() {
